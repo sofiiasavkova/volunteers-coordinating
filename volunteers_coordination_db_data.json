@@ -1,0 +1,119 @@
+[
+  {
+    "model": "coordination.coordinator",
+    "pk": 1,
+    "fields": {
+      "username": "admin",
+      "first_name": "Admin",
+      "last_name": "User",
+      "email": "admin@example.com",
+      "password": "adminpassword",
+      "is_staff": true,
+      "is_superuser": true,
+      "is_active": true
+    }
+  },
+  {
+    "model": "coordination.coordinator",
+    "pk": 2,
+    "fields": {
+      "username": "john_doe",
+      "first_name": "John",
+      "last_name": "Doe",
+      "email": "john.doe@example.com",
+      "password": "johnpassword",
+      "is_staff": false,
+      "is_superuser": false,
+      "is_active": true
+    }
+  },
+  {
+    "model": "coordination.project",
+    "pk": 1,
+    "fields": {
+      "name": "Project A",
+      "description": "A description for Project A",
+      "start_date": "2024-01-01",
+      "end_date": "2024-06-30",
+      "coordinator": 1
+    }
+  },
+  {
+    "model": "coordination.project",
+    "pk": 2,
+    "fields": {
+      "name": "Project B",
+      "description": "A description for Project B",
+      "start_date": "2024-02-01",
+      "end_date": "2024-07-31",
+      "coordinator": 2
+    }
+  },
+  {
+    "model": "coordination.category",
+    "pk": 1,
+    "fields": {
+      "name": "Education",
+      "description": "Projects related to educational activities."
+    }
+  },
+  {
+    "model": "coordination.category",
+    "pk": 2,
+    "fields": {
+      "name": "Health",
+      "description": "Projects related to healthcare and medical support."
+    }
+  },
+  {
+    "model": "coordination.task",
+    "pk": 1,
+    "fields": {
+      "title": "Task 1 for Project A",
+      "status": "Pending",
+      "deadline": "2024-03-01",
+      "project": 1,
+      "category": 1,
+      "assigned_volunteers": [1]
+    }
+  },
+  {
+    "model": "coordination.task",
+    "pk": 2,
+    "fields": {
+      "title": "Task 1 for Project B",
+      "status": "In Progress",
+      "deadline": "2024-04-01",
+      "project": 2,
+      "category": 2,
+      "assigned_volunteers": [2]
+    }
+  },
+  {
+    "model": "coordination.volunteer",
+    "pk": 1,
+    "fields": {
+      "first_name": "Alice",
+      "last_name": "Smith",
+      "email": "alice.smith@example.com"
+    }
+  },
+  {
+    "model": "coordination.volunteer",
+    "pk": 2,
+    "fields": {
+      "first_name": "Bob",
+      "last_name": "Johnson",
+      "email": "bob.johnson@example.com"
+    }
+  },
+  {
+    "model": "coordination.volunteer",
+    "pk": 3,
+    "fields": {
+      "first_name": "Charlie",
+      "last_name": "Brown",
+      "email": "charlie.brown@example.com"
+    }
+  }
+]
