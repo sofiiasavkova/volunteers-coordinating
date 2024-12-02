@@ -10,6 +10,7 @@ class Project(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField(blank=True, null=True)
     start_date = models.DateField()
+    end_date = models.DateField()
     coordinator = models.ForeignKey(Coordinator, on_delete=models.CASCADE, related_name="projects")
 
     def __str__(self):
