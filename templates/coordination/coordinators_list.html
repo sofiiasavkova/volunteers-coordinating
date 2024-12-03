@@ -1,0 +1,11 @@
+{% extends 'coordination/base.html' %}
+{% block content %}
+<h2>All Coordinators</h2>
+<ul>
+    {% for coordinator in coordinators %}
+        <li>{{ coordinator.username }} ({{ coordinator.first_name }} {{ coordinator.last_name }})</li>
+    {% empty %}
+        <li>No coordinators available.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

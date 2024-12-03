@@ -1,0 +1,11 @@
+{% extends 'coordination/base.html' %}
+{% block content %}
+<h2>All Tasks</h2>
+<ul>
+    {% for task in tasks %}
+        <li>{{ task.title }} - {{ task.status }} (Deadline: {{ task.deadline }})</li>
+    {% empty %}
+        <li>No tasks available.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

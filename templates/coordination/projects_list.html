@@ -1,0 +1,11 @@
+{% extends 'coordination/base.html' %}
+{% block content %}
+<h2>All Projects</h2>
+<ul>
+    {% for project in projects %}
+        <li>{{ project.name }} - {{ project.description }}</li>
+    {% empty %}
+        <li>No projects available.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

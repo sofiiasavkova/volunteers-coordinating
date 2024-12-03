@@ -1,19 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-</head>
-<body>
-    <header>
-        <h1>Welcome to the Volunteer Coordination System</h1>
-    </header>
-    <section>
-        <p>Welcome to the home page. Here you can navigate to the various sections of the platform.</p>
-    </section>
-    <footer>
-        <p>&copy; 2024 Volunteer Coordination System</p>
-    </footer>
-</body>
-</html>
+{% extends 'coordination/base.html' %}
+
+{% block content %}
+    <div class="jumbotron text-center">
+        <h1 class="display-4">Welcome to the Volunteer Coordination System</h1>
+        <p class="lead">This is a simple system to manage volunteers, projects, and tasks.</p>
+        <hr class="my-4">
+        <p>Use this system to track volunteer participation and project management.</p>
+        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    </div>
+{% endblock %}

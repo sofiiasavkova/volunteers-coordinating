@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Volunteer Coordination System{% endblock %}</title>
+</head>
+<body>
+    <div class="sidebar">
+        <h3>Menu</h3>
+        <a href="{% url 'all_volunteers' %}">All Volunteers</a>
+        <a href="{% url 'all_projects' %}">All Projects</a>
+        <a href="{% url 'all_tasks' %}">All Tasks</a>
+        <a href="{% url 'all_coordinators' %}">All Coordinators</a>
+    </div>
+    <div class="content">
+        <header>
+            <h1>Volunteer Coordination System</h1>
+        </header>
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
+
