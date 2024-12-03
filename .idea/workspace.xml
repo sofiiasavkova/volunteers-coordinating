@@ -5,11 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="900803e4-11ac-4d0a-800f-2db1d734cf99" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/static/css/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coordination/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/coordination/project_confirm_delete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/coordination/project_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/coordination/project_update_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/includes/pagination.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/includes/sidebar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/registration/logged_out.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/registration/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coordination/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/coordination/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coordination/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/coordination/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/coordination/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/coordination/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/coordination/tasks_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/coordination/tasks_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/coordination/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/coordination/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/coordination/projects_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/coordination/projects_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/volunteers_coordinating/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/volunteers_coordinating/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/volunteers_coordinating/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/volunteers_coordinating/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +102,7 @@
       <option name="presentableId" value="Default" />
       <updated>1732895040560</updated>
       <workItem from="1732895060335" duration="11536000" />
-      <workItem from="1733084156743" duration="26174000" />
+      <workItem from="1733084156743" duration="46192000" />
     </task>
     <servers />
   </component>
