@@ -1,0 +1,16 @@
+{% extends "coordination/base.html" %}
+
+{% block content %}
+  <h1>Volunteer Details: {{ volunteer.first_name }} {{ volunteer.last_name }}</h1>
+
+  <p><strong>Email:</strong> {{ volunteer.email }}</p>
+  <p><strong>Assigned Tasks:</strong></p>
+  <ul>
+    {% for task in volunteer.assigned_tasks.all %}
+      <li><a href="{% url 'coordination:task-detail' pk=task.id %}">{{ task.title }}</a></li>
+    {% endfor %}
+  </ul>
+
+  <a href="{% url 'coordination:all_volunteers' %}" class="btn btn-secondary">Back to Volunteers</a>
+{% endblock %}
+

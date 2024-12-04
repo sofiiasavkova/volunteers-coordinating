@@ -1,11 +1,32 @@
-{% extends 'coordination/base.html' %}
+{% extends "coordination/base.html" %}
+
 {% block content %}
-<h2>All Coordinators</h2>
-<ul>
-    {% for coordinator in coordinators %}
-        <li>{{ coordinator.username }} ({{ coordinator.first_name }} {{ coordinator.last_name }})</li>
-    {% empty %}
-        <li>No coordinators available.</li>
-    {% endfor %}
-</ul>
+  <h1>All Coordinators</h1>
+  <a href="{% url 'coordination:coordinator-create' %}" class="btn btn-primary mb-3">Add Coordinator</a>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for coordinator in coordinators %}
+        <tr>
+          <td>
+            <a href="{% url 'coordination:coordinator-detail' pk=coordinator.id %}">
+              {{ coordinator.first_name }} {{ coordinator.last_name }}
+            </a>
+          </td>
+          <td>{{ coordinator.email }}</td>
+          <td>
+            <a href="{% url 'coordination:coordinator-update' pk=coordinator.id %}" class="btn btn-sm btn-info">Edit</a>
+            <a href="{% url 'coordination:coordinator-delete' pk=coordinator.id %}" class="btn btn-sm btn-danger">Delete</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 {% endblock %}
