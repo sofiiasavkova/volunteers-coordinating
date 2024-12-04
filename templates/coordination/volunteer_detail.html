@@ -6,11 +6,14 @@
   <p><strong>Email:</strong> {{ volunteer.email }}</p>
   <p><strong>Assigned Tasks:</strong></p>
   <ul>
-    {% for task in volunteer.assigned_tasks.all %}
+    {% for task in volunteer.task_set.all %}
       <li><a href="{% url 'coordination:task-detail' pk=task.id %}">{{ task.title }}</a></li>
+    {% empty %}
+      <li>No tasks assigned</li>
     {% endfor %}
   </ul>
 
   <a href="{% url 'coordination:all_volunteers' %}" class="btn btn-secondary">Back to Volunteers</a>
 {% endblock %}
+
 

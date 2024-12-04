@@ -48,5 +48,7 @@ urlpatterns = [
     path('coordinators/<int:pk>/update/', CoordinatorUpdateView.as_view(), name='coordinator-update'),
     path('coordinators/<int:pk>/delete/', CoordinatorDeleteView.as_view(), name='coordinator-delete'),
     path('coordinators/<int:pk>/', CoordinatorDetailView.as_view(), name='coordinator-detail'),
+    path('register/', views.register, name='register'),
     path("logout/", custom_logout_view, name="logout"),
+
     ]

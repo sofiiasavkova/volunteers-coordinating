@@ -27,7 +27,7 @@
           <td>{{ task.deadline }}</td>
           <td>
             {% for volunteer in task.assigned_volunteers.all %}
-              {{ volunteer.username }}{% if not forloop.last %}, {% endif %}
+              {{ volunteer.first_name }} {{ volunteer.last_name }}{% if not forloop.last %}, {% endif %}
             {% empty %}
               No volunteers assigned
             {% endfor %}
