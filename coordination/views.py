@@ -3,12 +3,20 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .forms import ProjectForm, TaskForm, CoordinatorRegistrationForm
 from .models import Volunteer, Project, Task, Coordinator
-from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView
+from django.views.generic import (
+    ListView,
+    CreateView,
+    UpdateView,
+    DeleteView,
+    DetailView
+)
 from django.contrib.auth import logout
 from django.urls import reverse_lazy
 
+
 def home(request):
     return render(request, 'coordination/home.html')
+
 
 class CoordinatorListView(LoginRequiredMixin, ListView):
     model = Coordinator
@@ -85,6 +93,7 @@ class ProjectDeleteView(LoginRequiredMixin, DeleteView):
     context_object_name = 'project'
     success_url = reverse_lazy('coordination:all_projects')
 
+
 class VolunteerListView(LoginRequiredMixin, ListView):
     model = Volunteer
     template_name = 'coordination/volunteers_list.html'
@@ -144,6 +153,7 @@ class TaskDetailView(LoginRequiredMixin, DetailView):
         context['assigned_volunteers'] = self.object.assigned_volunteers.all()
         return context
 
+
 class TaskCreateView(LoginRequiredMixin, CreateView):
     model = Task
     form_class = TaskForm
@@ -156,6 +166,7 @@ class TaskCreateView(LoginRequiredMixin, CreateView):
         response = super().form_valid(form)
         print(f"Assigned Volunteers: {self.object.assigned_volunteers.all()}")
         return response
+
 
 class TaskUpdateView(LoginRequiredMixin, UpdateView):
     model = Task
@@ -170,6 +181,7 @@ class TaskDeleteView(LoginRequiredMixin, DeleteView):
     model = Task
     template_name = 'coordination/task_confirm_delete.html'
     success_url = reverse_lazy('coordination:all_tasks')
+
 
 def custom_logout_view(request):
     logout(request)

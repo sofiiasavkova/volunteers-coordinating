@@ -5,7 +5,9 @@ from .models import Coordinator, Project, Task, Volunteer, Category
 
 @admin.register(Coordinator)
 class CoordinatorAdmin(UserAdmin):
-    list_display = UserAdmin.list_display + ("email", "first_name", "last_name")
+    list_display = UserAdmin.list_display + (
+        "email", "first_name", "last_name"
+    )
     fieldsets = (
         *UserAdmin.fieldsets,
     )
@@ -13,7 +15,12 @@ class CoordinatorAdmin(UserAdmin):
 
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
-    list_display = ("name", "start_date", "end_date", "coordinator")
+    list_display = (
+        "name",
+        "start_date",
+        "end_date",
+        "coordinator"
+    )
     search_fields = ("name",)
     list_filter = ("start_date", "end_date")
     autocomplete_fields = ("coordinator",)
@@ -21,7 +28,13 @@ class ProjectAdmin(admin.ModelAdmin):
 
 @admin.register(Task)
 class TaskAdmin(admin.ModelAdmin):
-    list_display = ("title", "status", "deadline", "project", "category")
+    list_display = (
+        "title",
+        "status",
+        "deadline",
+        "project",
+        "category"
+    )
     search_fields = ("title",)
     list_filter = ("status", "deadline", "category")
     autocomplete_fields = ("project", "category")

@@ -13,13 +13,26 @@ class TaskForm(forms.ModelForm):
 
     class Meta:
         model = Task
-        fields = ['title', 'status', 'deadline', 'project', 'category', 'assigned_volunteers']
+        fields = [
+            'title',
+            'status',
+            'deadline',
+            'project',
+            'category',
+            'assigned_volunteers'
+        ]
 
 
 class ProjectForm(forms.ModelForm):
     class Meta:
         model = Project
-        fields = ['name', 'description', 'start_date', 'end_date', 'coordinator']
+        fields = [
+            'name',
+            'description',
+            'start_date',
+            'end_date',
+            'coordinator'
+        ]
 
 
 class CoordinatorRegistrationForm(UserCreationForm):

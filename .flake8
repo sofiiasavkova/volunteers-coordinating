@@ -1,5 +1,5 @@
 [flake8]
 max-line-length = 79
-exclude = .venv,.git,__pycache__,node_modules, */settings.py
+exclude = .venv,.git,__pycache__,node_modules, */settings.py, coordination/migrations/*
 extend-ignore = Q000
 inline-quotes = double
