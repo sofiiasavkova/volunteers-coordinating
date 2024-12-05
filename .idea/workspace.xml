@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="900803e4-11ac-4d0a-800f-2db1d734cf99" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.flake8" beforeDir="false" afterPath="$PROJECT_DIR$/.flake8" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coordination/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/coordination/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coordination/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/coordination/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coordination/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/coordination/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coordination/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/coordination/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coordination/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/coordination/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +94,7 @@
       <workItem from="1732895060335" duration="11536000" />
       <workItem from="1733084156743" duration="64125000" />
       <workItem from="1733319409454" duration="3455000" />
-      <workItem from="1733323241139" duration="4506000" />
+      <workItem from="1733323241139" duration="9304000" />
     </task>
     <servers />
   </component>
