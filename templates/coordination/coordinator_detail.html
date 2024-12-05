@@ -1,0 +1,13 @@
+{% extends "coordination/base.html" %}
+
+{% block content %}
+  <h1>Coordinator Details: {{ coordinator.first_name }} {{ coordinator.last_name }}</h1>
+
+  <p><strong>Username:</strong> {{ coordinator.username }}</p>
+  <p><strong>Email:</strong> {{ coordinator.email }}</p>
+  <p><strong>Date Joined:</strong> {{ coordinator.date_joined }}</p>
+
+  <a href="{% url 'coordination:coordinator-update' pk=coordinator.id %}" class="btn btn-info">Edit</a>
+  <a href="{% url 'coordination:coordinator-delete' pk=coordinator.id %}" class="btn btn-danger">Delete</a>
+  <a href="{% url 'coordination:all_coordinators' %}" class="btn btn-secondary">Back to List</a>
+{% endblock %}

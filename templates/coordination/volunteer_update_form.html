@@ -1,0 +1,11 @@
+{% extends "coordination/base.html" %}
+
+{% block content %}
+  <h1>Update Volunteer: {{ volunteer.first_name }} {{ volunteer.last_name }}</h1>
+
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+  </form>
+{% endblock %}

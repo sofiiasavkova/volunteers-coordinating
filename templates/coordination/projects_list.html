@@ -1,0 +1,39 @@
+{% extends "coordination/base.html" %}
+
+{% block content %}
+  <h1>
+    All Projects
+    <a href="{% url 'coordination:project-create' %}" class="btn btn-primary">Add Project</a>
+  </h1>
+
+  {% if projects %}
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Update</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for project in projects %}
+          <tr>
+            <td>{{ project.id }}</td>
+            <td><a href="{% url 'coordination:project-detail' pk=project.id %}">{{ project.name }}</a></td>
+            <td>{{ project.description }}</td>
+            <td>{{ project.start_date }}</td>
+            <td>{{ project.end_date }}</td>
+            <td><a href="{% url 'coordination:project-update'  pk=project.id%}">Update</a></td>
+            <td><a href="{% url 'coordination:project-delete' pk=project.id %}" style="color: red">Delete</a></td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>No projects available.</p>
+  {% endif %}
+{% endblock %}
