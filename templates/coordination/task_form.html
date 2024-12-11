@@ -1,0 +1,35 @@
+{% extends "coordination/base.html" %}
+
+{% block content %}
+  <h1>{% if form.instance.pk %}Update Task{% else %}Create New Task{% endif %}</h1>
+
+  <form method="post">
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+    <div>
+      {{ form.title.label_tag }}
+      {{ form.title }}
+    </div>
+    <div>
+      {{ form.status.label_tag }}
+      {{ form.status }}
+    </div>
+    <div>
+      {{ form.deadline.label_tag }}
+      {{ form.deadline }}
+    </div>
+    <div>
+      {{ form.project.label_tag }}
+      {{ form.project }}
+    </div>
+    <div>
+      {{ form.category.label_tag }}
+      {{ form.category }}
+    </div>
+    <div>
+      {{ form.assigned_volunteers.label_tag }}
+      {{ form.assigned_volunteers }}
+    </div>
+    <button type="submit" class="btn btn-primary">{% if form.instance.pk %}Update{% else %}Create{% endif %} Task</button>
+  </form>
+{% endblock %}

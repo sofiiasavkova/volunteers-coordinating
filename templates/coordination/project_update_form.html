@@ -1,0 +1,12 @@
+{% extends "coordination/base.html" %}
+
+{% block content %}
+  <h1>Update Project: {{ project.name }}</h1>
+
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+  </form>
+  <a href="{% url 'coordination:all_projects' %}" class="btn btn-secondary">Cancel</a>
+{% endblock %}
