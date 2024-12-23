@@ -63,6 +63,8 @@ class ProjectDetailView(LoginRequiredMixin, DetailView):
     template_name = 'coordination/project_detail.html'
     context_object_name = 'project'
 
+    def get_queryset(self):
+        return super().get_queryset().select_related("coordinator").prefetch_related("tasks")
 
 class ProjectListView(LoginRequiredMixin, ListView):
     model = Project
@@ -133,7 +135,7 @@ class VolunteerDetailView(LoginRequiredMixin, DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['tasks'] = Task.objects.filter(assigned_volunteers=self.object)
+        context['tasks'] = Task.objects.prefetch_related("assigned_volunteers").filter(assigned_volunteers=self.object)
         return context
 
 
@@ -142,6 +144,8 @@ class TaskListView(LoginRequiredMixin, ListView):
     template_name = 'coordination/tasks_list.html'
     context_object_name = 'tasks'
 
+    def get_queryset(self):
+        return Task.objects.select_related('project').prefetch_related('assigned_volunteers')
 
 class TaskDetailView(LoginRequiredMixin, DetailView):
     model = Task
@@ -150,8 +154,13 @@ class TaskDetailView(LoginRequiredMixin, DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['assigned_volunteers'] = self.object.assigned_volunteers.all()
+        context['assigned_volunteers'] = self.object.assigned_volunteers.prefetch_related("assigned_tasks").all()
         return context
+
+    def get_queryset(self):
+        return Task.objects.select_related('project').prefetch_related(
+            'assigned_volunteers__assigned_tasks'
+        )
 
 
 class TaskCreateView(LoginRequiredMixin, CreateView):

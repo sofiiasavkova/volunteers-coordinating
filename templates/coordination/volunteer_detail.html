@@ -6,7 +6,7 @@
   <p><strong>Email:</strong> {{ volunteer.email }}</p>
   <p><strong>Assigned Tasks:</strong></p>
   <ul>
-    {% for task in volunteer.tasks.all %}
+    {% for task in tasks %}
       <li><a href="{% url 'coordination:task-detail' pk=task.id %}">{{ task.title }}</a></li>
     {% empty %}
       <li>No tasks assigned</li>
