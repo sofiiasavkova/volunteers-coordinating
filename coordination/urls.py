@@ -1,5 +1,4 @@
 from django.urls import path
-from . import views
 from .views import (
     VolunteerListView,
     VolunteerDetailView,
@@ -21,13 +20,15 @@ from .views import (
     CoordinatorDetailView,
     CoordinatorUpdateView,
     CoordinatorDeleteView,
-    custom_logout_view,
+    LogoutView,
+    RegisterView,
+    HomeView
 )
 
 app_name = 'coordination'
 
 urlpatterns = [
-    path('', views.home, name='home'),
+    path('', HomeView.as_view(), name='home'),
     path('volunteers/', VolunteerListView.as_view(), name='all_volunteers'),
     path(
         'volunteers/<int:pk>/',
@@ -108,7 +109,7 @@ urlpatterns = [
         CoordinatorDetailView.as_view(),
         name='coordinator-detail'
     ),
-    path('register/', views.register, name='register'),
-    path("logout/", custom_logout_view, name="logout"),
+    path('register/', RegisterView.as_view(), name='register'),
+    path("logout/", LogoutView.as_view(), name="logout"),
 
     ]

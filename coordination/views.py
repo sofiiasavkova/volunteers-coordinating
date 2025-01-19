@@ -8,14 +8,17 @@ from django.views.generic import (
     CreateView,
     UpdateView,
     DeleteView,
-    DetailView
+    DetailView,
+    TemplateView,
 )
+from django.views import View
+from django.views.generic.edit import FormView
 from django.contrib.auth import logout
 from django.urls import reverse_lazy
 
 
-def home(request):
-    return render(request, 'coordination/home.html')
+class HomeView(TemplateView):
+    template_name = 'coordination/home.html'
 
 
 class CoordinatorListView(LoginRequiredMixin, ListView):
@@ -65,6 +68,7 @@ class ProjectDetailView(LoginRequiredMixin, DetailView):
 
     def get_queryset(self):
         return super().get_queryset().select_related("coordinator").prefetch_related("tasks")
+
 
 class ProjectListView(LoginRequiredMixin, ListView):
     model = Project
@@ -147,6 +151,7 @@ class TaskListView(LoginRequiredMixin, ListView):
     def get_queryset(self):
         return Task.objects.select_related('project').prefetch_related('assigned_volunteers')
 
+
 class TaskDetailView(LoginRequiredMixin, DetailView):
     model = Task
     template_name = 'coordination/task_detail.html'
@@ -192,17 +197,19 @@ class TaskDeleteView(LoginRequiredMixin, DeleteView):
     success_url = reverse_lazy('coordination:all_tasks')
 
 
-def custom_logout_view(request):
-    logout(request)
-    return render(request, "registration/logged_out.html")
+class LogoutView(View):
+    template_name = "registration/logged_out.html"
+
+    def get(self, request, *args, **kwargs):
+        logout(request)
+        return render(request, self.template_name)
 
 
-def register(request):
-    form = CoordinatorRegistrationForm(request.POST or None)
+class RegisterView(FormView):
+    template_name = 'registration/register.html'
+    form_class = CoordinatorRegistrationForm
+    success_url = reverse_lazy('login')
 
-    if request.method == "POST":
-        if form.is_valid():
-            form.save()
-            return redirect('login')
-
-    return render(request, 'registration/register.html', {'form': form})
+    def form_valid(self, form):
+        form.save()
+        return super().form_valid(form)
