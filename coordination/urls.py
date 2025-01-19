@@ -1,29 +1,14 @@
 from django.urls import path
-from .views import (
-    VolunteerListView,
-    VolunteerDetailView,
-    VolunteerCreateView,
-    VolunteerUpdateView,
-    VolunteerDeleteView,
-    ProjectListView,
-    ProjectDetailView,
-    ProjectCreateView,
-    ProjectUpdateView,
-    ProjectDeleteView,
-    TaskListView,
-    TaskDetailView,
-    TaskCreateView,
-    TaskUpdateView,
-    TaskDeleteView,
-    CoordinatorListView,
-    CoordinatorCreateView,
-    CoordinatorDetailView,
-    CoordinatorUpdateView,
-    CoordinatorDeleteView,
-    LogoutView,
-    RegisterView,
-    HomeView,
-)
+
+from .views import (CoordinatorCreateView, CoordinatorDeleteView,
+                    CoordinatorDetailView, CoordinatorListView,
+                    CoordinatorUpdateView, HomeView, LogoutView,
+                    ProjectCreateView, ProjectDeleteView, ProjectDetailView,
+                    ProjectListView, ProjectUpdateView, RegisterView,
+                    TaskCreateView, TaskDeleteView, TaskDetailView,
+                    TaskListView, TaskUpdateView, VolunteerCreateView,
+                    VolunteerDeleteView, VolunteerDetailView,
+                    VolunteerListView, VolunteerUpdateView)
 
 app_name = "coordination"
 

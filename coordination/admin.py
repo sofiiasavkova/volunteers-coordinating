@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from .models import Coordinator, Project, Task, Volunteer, Category
+
+from .models import Category, Coordinator, Project, Task, Volunteer
 
 
 @admin.register(Coordinator)

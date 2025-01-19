@@ -1,20 +1,14 @@
-from django.shortcuts import render, redirect
-from django.contrib.auth.mixins import LoginRequiredMixin
-
-from .forms import ProjectForm, TaskForm, CoordinatorRegistrationForm
-from .models import Volunteer, Project, Task, Coordinator
-from django.views.generic import (
-    ListView,
-    CreateView,
-    UpdateView,
-    DeleteView,
-    DetailView,
-    TemplateView,
-)
-from django.views import View
-from django.views.generic.edit import FormView
 from django.contrib.auth import logout
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
+from django.views import View
+from django.views.generic import (CreateView, DeleteView, DetailView, ListView,
+                                  TemplateView, UpdateView)
+from django.views.generic.edit import FormView
+
+from .forms import CoordinatorRegistrationForm, ProjectForm, TaskForm
+from .models import Coordinator, Project, Task, Volunteer
 
 
 class HomeView(TemplateView):

@@ -1,6 +1,7 @@
 from django import forms
-from .models import Project, Volunteer, Task, Coordinator
 from django.contrib.auth.forms import UserCreationForm
+
+from .models import Coordinator, Project, Task, Volunteer
 
 
 class TaskForm(forms.ModelForm):
