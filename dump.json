@@ -1,6 +1,6 @@
 [
 {
-    "model": "coordination.coordinator",
+    "model": "accounts.coordinator",
     "pk": 1,
     "fields": {
         "password": "adminpassword",
@@ -18,7 +18,7 @@
     }
 },
 {
-    "model": "coordination.coordinator",
+    "model": "accounts.coordinator",
     "pk": 2,
     "fields": {
         "password": "johnpassword",
@@ -36,7 +36,7 @@
     }
 },
 {
-    "model": "coordination.coordinator",
+    "model": "accounts.coordinator",
     "pk": 3,
     "fields": {
         "password": "pbkdf2_sha256$870000$Y6sAKppIOoq1QULgKKQXQt$6NdJqRw7gAy1D2zSbVZQJ6+kIno1hw9qGwgHHOQ56HE=",
@@ -54,7 +54,7 @@
     }
 },
 {
-    "model": "coordination.coordinator",
+    "model": "accounts.coordinator",
     "pk": 6,
     "fields": {
         "password": "pbkdf2_sha256$870000$N67irXDP0DUzrFuNTAe2oz$LJ+RnPTmw3swzzbyxa/3gnvBp0TuFmR0/iBSsWS2Y90=",
@@ -72,7 +72,7 @@
     }
 },
 {
-    "model": "coordination.coordinator",
+    "model": "accounts.coordinator",
     "pk": 7,
     "fields": {
         "password": "pbkdf2_sha256$870000$QdhBFDprS22SrgTKM3MGL3$iBfj6U+aDDIneHh7pmxcxB85ImiXq/gSwm96i1FUm7k=",

@@ -1,7 +1,6 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm
 
-from .models import Coordinator, Project, Task, Volunteer
+from .models import Project, Task, Volunteer
 
 
 class TaskForm(forms.ModelForm):
@@ -28,9 +27,3 @@ class ProjectForm(forms.ModelForm):
     class Meta:
         model = Project
         fields = ["name", "description", "start_date", "end_date", "coordinator"]
-
-
-class CoordinatorRegistrationForm(UserCreationForm):
-    class Meta:
-        model = Coordinator
-        fields = ["username", "email", "first_name", "last_name"]

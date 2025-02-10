@@ -1,13 +1,6 @@
 from django.contrib import admin
-from django.contrib.auth.admin import UserAdmin
 
-from .models import Category, Coordinator, Project, Task, Volunteer
-
-
-@admin.register(Coordinator)
-class CoordinatorAdmin(UserAdmin):
-    list_display = UserAdmin.list_display + ("email", "first_name", "last_name")
-    fieldsets = (*UserAdmin.fieldsets,)
+from .models import Category, Project, Task, Volunteer
 
 
 @admin.register(Project)

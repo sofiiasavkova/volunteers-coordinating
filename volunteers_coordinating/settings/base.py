@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "coordination",
+    "accounts",
     "crispy_forms",
     "crispy_bootstrap4",
     "debug_toolbar",
@@ -126,4 +127,4 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-AUTH_USER_MODEL = "coordination.Coordinator"
+AUTH_USER_MODEL = "accounts.Coordinator"

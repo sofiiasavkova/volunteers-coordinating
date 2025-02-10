@@ -1,6 +1,6 @@
 [
   {
-    "model": "coordination.coordinator",
+    "model": "accounts.coordinator",
     "pk": 1,
     "fields": {
       "username": "admin",
@@ -14,7 +14,7 @@
     }
   },
   {
-    "model": "coordination.coordinator",
+    "model": "accounts.coordinator",
     "pk": 2,
     "fields": {
       "username": "john_doe",

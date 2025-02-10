@@ -1,11 +1,7 @@
 from django.urls import path
 
-from .views import (CoordinatorCreateView, CoordinatorDeleteView,
-                    CoordinatorDetailView, CoordinatorListView,
-                    CoordinatorUpdateView, HomeView, LogoutView,
-                    ProjectCreateView, ProjectDeleteView, ProjectDetailView,
-                    ProjectListView, ProjectUpdateView, RegisterView,
-                    TaskCreateView, TaskDeleteView, TaskDetailView,
+from .views import (HomeView, ProjectCreateView, ProjectDeleteView, ProjectDetailView,
+                    ProjectListView, ProjectUpdateView, TaskCreateView, TaskDeleteView, TaskDetailView,
                     TaskListView, TaskUpdateView, VolunteerCreateView,
                     VolunteerDeleteView, VolunteerDetailView,
                     VolunteerListView, VolunteerUpdateView)
@@ -43,27 +39,4 @@ urlpatterns = [
     path("tasks/create/", TaskCreateView.as_view(), name="task-create"),
     path("tasks/<int:pk>/update/", TaskUpdateView.as_view(), name="task-update"),
     path("tasks/<int:pk>/delete/", TaskDeleteView.as_view(), name="task-delete"),
-    path("coordinators/", CoordinatorListView.as_view(), name="all_coordinators"),
-    path(
-        "coordinators/create/",
-        CoordinatorCreateView.as_view(),
-        name="coordinator-create",
-    ),
-    path(
-        "coordinators/<int:pk>/update/",
-        CoordinatorUpdateView.as_view(),
-        name="coordinator-update",
-    ),
-    path(
-        "coordinators/<int:pk>/delete/",
-        CoordinatorDeleteView.as_view(),
-        name="coordinator-delete",
-    ),
-    path(
-        "coordinators/<int:pk>/",
-        CoordinatorDetailView.as_view(),
-        name="coordinator-detail",
-    ),
-    path("register/", RegisterView.as_view(), name="register"),
-    path("logout/", LogoutView.as_view(), name="logout"),
 ]

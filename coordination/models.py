@@ -1,14 +1,5 @@
-from django.contrib.auth.models import AbstractUser
 from django.db import models
-
-
-class Coordinator(AbstractUser):
-    class Meta:
-        verbose_name = "Coordinator"
-        verbose_name_plural = "Coordinators"
-
-    def __str__(self):
-        return f"{self.username} ({self.first_name} {self.last_name})"
+from accounts.models import Coordinator
 
 
 class Project(models.Model):
